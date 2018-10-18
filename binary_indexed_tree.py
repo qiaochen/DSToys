@@ -1,6 +1,6 @@
-class TreeArray:
+class BinaryIndexedTree:
     """
-    A toy data structure that cashes element sums 
+    A toy Binary Indexed Tree data structure that caches element sums 
     (only numbers are considerred),
     for efficiently qurying/modifying subarray sums
     log(n) modify and log(n) query
@@ -58,8 +58,10 @@ class TreeArray:
     
     def _lowbit(self, idx):
         """
-        get the number of zeros in lower oreds of 
-        the binary representation of idx
+        Convert idx to binary representation,
+        return the last 1 represented number in 
+        decimal representation e.g. (34)10 = (00100010)2
+        the segment containing the last 1 is (10)2 = (2)10
         :type idx: int
         """
         return idx & -idx
@@ -67,7 +69,7 @@ class TreeArray:
         
 if __name__ == "__main__":
     A = [1,2,34,9,4,-2,9.8,2, 89, 3.7]
-    tree_arr = TreeArray(A)
+    tree_arr = BinaryIndexedTree(A)
     assert(tree_arr.sum_range(3, 9) == sum(A[3:9+1]))
     tree_arr.update(5, 100)
     A[5] = 100
