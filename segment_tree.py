@@ -1,5 +1,7 @@
 class SegmentTreeNode:
-    
+    """
+    Tree Node (for interval max)
+    """
     def __init__(self, start, end, max):
         self.start = start
         self.end = end
@@ -12,7 +14,7 @@ class SegmentTree:
     Segment Tree datastructure,
     Alternative to Binary Indexed Tree supporting
     interval sums, and offers more operations in interval (max operation here).
-    Log(N) query and Log(N) modify time complexity
+    O(log(N)) query and O(log(N)) modify time complexity
     """
     def __init__(self, A):
         self.root = self.build(A, 0, len(A)-1)

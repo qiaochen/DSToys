@@ -3,7 +3,7 @@ class BinaryIndexedTree:
     A toy Binary Indexed Tree data structure that caches element sums 
     (only numbers are considerred),
     for efficiently qurying/modifying subarray sums
-    log(n) modify and log(n) query
+    O(log(n)) modify and O(log(n)) query
     """
     def __init__(self, A):
         """
